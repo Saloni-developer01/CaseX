@@ -1,6 +1,6 @@
 import Product from '../models/productModel.js';
 
-// API 1: Get All Products (With Bonus Search Feature)
+//API 1: Get All Products
 export const getAllProducts = async (req, res) => {
   try {
     const { search } = req.query;

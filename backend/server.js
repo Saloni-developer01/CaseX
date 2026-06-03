@@ -7,13 +7,10 @@ import productRoutes from './routes/productRoutes.js';
 dotenv.config();
 const app = express();
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
-// MongoDB Connection
 const MONGO_URI = process.env.MONGO_URI; 
-// (Aap apna asli MongoDB Atlas ka connection string yahan daal sakti hain)
 
 mongoose.connect(MONGO_URI)
   .then(() => console.log("MongoDB Connected Successfully!"))

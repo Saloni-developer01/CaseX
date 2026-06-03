@@ -39,11 +39,11 @@ export default function ProductCard({ product }) {
     <div className="group bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
 
       {/* Product Image Placeholder */}
-      <div className="h-56 bg-gradient-to-br from-orange-50 via-pink-50 to-purple-50 flex items-center justify-center">
+      {/* <div className="h-56 bg-gradient-to-br from-orange-50 via-pink-50 to-purple-50 flex items-center justify-center">
         <div className="w-32 h-32 rounded-2xl bg-white/70 backdrop-blur-sm flex items-center justify-center text-6xl shadow-lg">
           📦
         </div>
-      </div>
+      </div> */}
 
       <div className="p-5">
 
