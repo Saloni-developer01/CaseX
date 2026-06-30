@@ -6,8 +6,7 @@ CaseX is a full-stack e-commerce web application built using the MERN stack. It 
 ---
 
 ## 🚀 Live Demo
-* **Frontend:** [Paste your live Vercel/Render link here]
-* **Backend API:** [Paste your live Render backend link here]
+* **Click Here:** [Paste your live Vercel/Render link here]
 
 ---
 
