@@ -694,7 +694,7 @@ export default function ProductDetail({ productId, refreshProduct }) {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/products/${id}`);
+        const res = await axios.get(`https://casex-backend-h0xv.onrender.com/api/products/${id}`);
         setProduct(res.data);
       } catch (err) {
         console.error("Error fetching product:", err);
@@ -804,7 +804,7 @@ export default function ProductDetail({ productId, refreshProduct }) {
           Authorization: `Bearer ${userInfo.token}`,
         },
       };
-      const res = await axios.post(`http://localhost:5000/api/products/${product._id}/reviews`, { rating, comment, reviewImages: images }, config);
+      const res = await axios.post(`https://casex-backend-h0xv.onrender.com/api/products/${product._id}/reviews`, { rating, comment, reviewImages: images }, config);
       alert(res.data.msg);
       setComment('');
       setImages([]);

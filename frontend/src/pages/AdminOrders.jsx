@@ -231,7 +231,7 @@ export default function AdminOrders() {
   // Saare orders load karne ka function
   const fetchAllOrders = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/orders', {
+      const res = await axios.get('https://casex-backend-h0xv.onrender.com/api/orders', {
         headers: { Authorization: `Bearer ${userInfo?.token}` }
       });
       setOrders(res.data);
@@ -249,7 +249,7 @@ export default function AdminOrders() {
   // Status badalne ka handler
   const handleStatusChange = async (orderId, newStatus) => {
     try {
-      await axios.put(`http://localhost:5000/api/orders/${orderId}`, { status: newStatus }, {
+      await axios.put(`https://casex-backend-h0xv.onrender.com/api/orders/${orderId}`, { status: newStatus }, {
         headers: { Authorization: `Bearer ${userInfo?.token}` }
       });
       alert(`🎉 Order status updated to ${newStatus}`);

@@ -202,7 +202,7 @@ export default function AdminVendors() {
   useEffect(() => {
     const fetchVendors = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/admin/vendors', {
+        const res = await axios.get('https://casex-backend-h0xv.onrender.com/api/admin/vendors', {
           headers: { Authorization: `Bearer ${userInfo?.token}` }
         });
         setVendors(res.data);
@@ -225,7 +225,7 @@ export default function AdminVendors() {
     if (!window.confirm(confirmMsg)) return;
 
     try {
-      const res = await axios.put(`http://localhost:5000/api/admin/users/${vendorId}/block`, {}, {
+      const res = await axios.put(`https://casex-backend-h0xv.onrender.com/api/admin/users/${vendorId}/block`, {}, {
         headers: { Authorization: `Bearer ${userInfo.token}` }
       });
       alert(res.data.msg);
@@ -242,7 +242,7 @@ export default function AdminVendors() {
     if (!window.confirm("⚠️ ATTENTION: Are you sure you want to permanently delete this vendor? All associated account data, products, and records will be removed and cannot be recovered.")) return;
 
     try {
-      const res = await axios.delete(`http://localhost:5000/api/admin/users/${vendorId}`, {
+      const res = await axios.delete(`https://casex-backend-h0xv.onrender.com/api/admin/users/${vendorId}`, {
         headers: { Authorization: `Bearer ${userInfo.token}` }
       });
       alert(res.data.msg);

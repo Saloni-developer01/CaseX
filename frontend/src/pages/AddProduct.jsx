@@ -420,7 +420,7 @@ export default function AddProduct() {
         sellerName: userInfo.name
       };
 
-      const res = await axios.post('http://localhost:5000/api/products', productData, {
+      const res = await axios.post('https://casex-backend-h0xv.onrender.com/api/products', productData, {
         headers: {
           Authorization: `Bearer ${userInfo.token}` 
         }

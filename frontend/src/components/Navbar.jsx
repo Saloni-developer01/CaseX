@@ -371,7 +371,7 @@ export default function Navbar() {
     const fetchCartCount = async () => {
       if (!userInfo || !userInfo.token) return;
       try {
-        const res = await axios.get('http://localhost:5000/api/cart', {
+        const res = await axios.get('https://casex-backend-h0xv.onrender.com/api/cart', {
           headers: { Authorization: `Bearer ${userInfo.token}` }
         });
         const totalItems = res.data.items?.reduce((acc, item) => acc + item.quantity, 0) || 0;

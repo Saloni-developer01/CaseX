@@ -197,7 +197,7 @@ export default function Cart() {
     const fetchCart = async () => {
       if (!userInfo) return setLoading(false);
       try {
-        const res = await axios.get('http://localhost:5000/api/cart', {
+        const res = await axios.get('https://casex-backend-h0xv.onrender.com/api/cart', {
           headers: { Authorization: `Bearer ${userInfo.token}` }
         });
         setCart(res.data);
@@ -215,7 +215,7 @@ export default function Cart() {
     if (newQty < 1) return;
 
     try {
-      const res = await axios.post('http://localhost:5000/api/cart/add', 
+      const res = await axios.post('https://casex-backend-h0xv.onrender.com/api/cart/add', 
         { productId, quantity: newQty },
         { headers: { Authorization: `Bearer ${userInfo.token}` } }
       );
@@ -227,7 +227,7 @@ export default function Cart() {
 
   const removeItemHandler = async (productId) => {
     try {
-      const res = await axios.post('http://localhost:5000/api/cart/remove', 
+      const res = await axios.post('https://casex-backend-h0xv.onrender.com/api/cart/remove', 
         { productId },
         { headers: { Authorization: `Bearer ${userInfo.token}` } }
       );

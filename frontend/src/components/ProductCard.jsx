@@ -186,7 +186,7 @@ export default function ProductCard({ product, isInitiallyLiked, userWishlist, s
 
     try {
       setIsLiked(!isLiked);
-      const res = await axios.post('http://localhost:5000/api/auth/wishlist/toggle', 
+      const res = await axios.post('https://casex-backend-h0xv.onrender.com/api/auth/wishlist/toggle', 
         { productId }, 
         { headers: { Authorization: `Bearer ${userInfo.token}` } }
       );
@@ -218,7 +218,7 @@ const handleAddToCart = async (productId) => {
 
   try {
     // By default quantity 1 bhejenge card se
-    await axios.post('http://localhost:5000/api/cart/add', 
+    await axios.post('https://casex-backend-h0xv.onrender.com/api/cart/add', 
       { productId, quantity: 1 }, 
       { headers: { Authorization: `Bearer ${userInfo.token}` } }
     );

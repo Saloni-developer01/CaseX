@@ -151,7 +151,7 @@ export default function Checkout() {
   const handleOnlinePayment = async (userInfo) => {
     try {
       // 1. Backend se Razorpay Order ID mangwayen
-      const orderRes = await axios.post('http://localhost:5000/api/orders/razorpay', { amount: totalPrice });
+      const orderRes = await axios.post('https://casex-backend-h0xv.onrender.com/api/orders/razorpay', { amount: totalPrice });
       const { id: razorpayOrderId, amount, currency } = orderRes.data;
 
       // 2. Razorpay Checkout Options Configure karein
@@ -185,7 +185,7 @@ export default function Checkout() {
           };
 
           // Backend par verify karwayen
-          const verifyRes = await axios.post('http://localhost:5000/api/orders/verify', verifyData);
+          const verifyRes = await axios.post('https://casex-backend-h0xv.onrender.com/api/orders/verify', verifyData);
           if (verifyRes.data.success) {
             alert("🎉 Online Payment Successful & Order Placed!");
             // 🌟 FIXED: Direct dashboard redirect with hard reload taaki fresh data fetch ho sake
@@ -245,7 +245,7 @@ export default function Checkout() {
           paymentStatus: 'Pending (COD)'
         };
 
-        await axios.post('http://localhost:5000/api/orders', orderData, {
+        await axios.post('https://casex-backend-h0xv.onrender.com/api/orders', orderData, {
           headers: { Authorization: `Bearer ${userInfo.token}` }
         });
 

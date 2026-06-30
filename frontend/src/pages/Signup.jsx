@@ -19,7 +19,7 @@ export default function Signup() {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/signup', formData);
+      const res = await axios.post('https://casex-backend-h0xv.onrender.com/api/auth/signup', formData);
       
       // Signup hote hi auto-login karwa denge aur user data save kar lenge
       localStorage.setItem('userInfo', JSON.stringify(res.data));

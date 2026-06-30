@@ -225,7 +225,7 @@ export default function AdminPayouts() {
   const fetchPayoutRequests = async () => {
     try {
       // Saari requests admin ke liye fetch ho rahi hain
-      const res = await axios.get('http://localhost:5000/api/payouts/admin/all', {
+      const res = await axios.get('https://casex-backend-h0xv.onrender.com/api/payouts/admin/all', {
         headers: { Authorization: `Bearer ${userInfo.token}` }
       });
       setRequests(res.data);
@@ -239,7 +239,7 @@ export default function AdminPayouts() {
   // Status ko Approve ya Reject karne ka function
   const handleStatusUpdate = async (id, newStatus) => {
     try {
-      const res = await axios.put(`http://localhost:5000/api/payouts/admin/update/${id}`, 
+      const res = await axios.put(`https://casex-backend-h0xv.onrender.com/api/payouts/admin/update/${id}`, 
         { 
           status: newStatus, 
           adminMessage: newStatus === 'Approved' ? 'Your payout has been processed successfully.' : 'Rejected by Admin.' 

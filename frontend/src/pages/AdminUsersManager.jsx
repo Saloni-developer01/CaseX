@@ -305,7 +305,7 @@ export default function AdminUsersManager() {
     try {
       const endpoint = activeTab === 'vendors' ? 'vendors' : 'customers';
       // 🌟 FIXED: URL changed from /api/admin to /api/auth to match your server.js mount
-      const res = await axios.get(`http://localhost:5000/api/auth/${endpoint}`, {
+      const res = await axios.get(`https://casex-backend-h0xv.onrender.com/api/auth/${endpoint}`, {
         headers: { Authorization: `Bearer ${userInfo?.token}` }
       });
       setUsersList(res.data);
@@ -334,7 +334,7 @@ export default function AdminUsersManager() {
 
     try {
       // 🌟 FIXED: URL changed to match authRoutes system
-      const res = await axios.put(`http://localhost:5000/api/auth/users/${userId}/block`, {}, {
+      const res = await axios.put(`https://casex-backend-h0xv.onrender.com/api/auth/users/${userId}/block`, {}, {
         headers: { Authorization: `Bearer ${userInfo.token}` }
       });
       alert(res.data.msg);
@@ -353,7 +353,7 @@ export default function AdminUsersManager() {
 
     try {
       // 🌟 FIXED: URL changed to match authRoutes system
-      const res = await axios.delete(`http://localhost:5000/api/auth/users/${userId}`, {
+      const res = await axios.delete(`https://casex-backend-h0xv.onrender.com/api/auth/users/${userId}`, {
         headers: { Authorization: `Bearer ${userInfo.token}` }
       });
       alert(res.data.msg);

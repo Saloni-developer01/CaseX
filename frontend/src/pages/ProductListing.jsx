@@ -31,7 +31,7 @@ export default function ProductListing() {
     const fetchWishlist = async () => {
       if (!userInfo || !userInfo.token) return;
       try {
-        const res = await axios.get('http://localhost:5000/api/auth/wishlist', {
+        const res = await axios.get('https://casex-backend-h0xv.onrender.com/api/auth/wishlist', {
           headers: { Authorization: `Bearer ${userInfo.token}` }
         });
         // Sirf product IDs ka array nikal kar state me save karenge
@@ -52,7 +52,7 @@ const handleDeleteClick = async (productId) => {
       
       // Apni api call karein
       const token = userInfo?.token;
-      await axios.delete(`http://localhost:5000/api/products/delete/${productId}`, {
+      await axios.delete(`https://casex-backend-h0xv.onrender.com/api/products/delete/${productId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       alert("🎉 Product deleted successfully!");
@@ -467,7 +467,7 @@ const handleDeleteClick = async (productId) => {
           const token = userInfo?.token;
 
           const { _id, __v, ...updateData } = selectedEditProduct;
-          await axios.put(`http://localhost:5000/api/products/update/${_id}`, updateData, {
+          await axios.put(`https://casex-backend-h0xv.onrender.com/api/products/update/${_id}`, updateData, {
       headers: { Authorization: `Bearer ${token}` }
     });
           

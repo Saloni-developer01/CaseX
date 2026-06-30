@@ -10,7 +10,7 @@ export default function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+      const res = await axios.post('https://casex-backend-h0xv.onrender.com/api/auth/login', { email, password });
       localStorage.setItem('userInfo', JSON.stringify(res.data));
       alert(`Welcome back, ${res.data.name}!`);
       

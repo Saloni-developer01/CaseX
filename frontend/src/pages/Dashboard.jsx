@@ -584,7 +584,7 @@ export default function Dashboard() {
     const fetchMyOrdersAndPayouts = async () => {
       if (!currentUser) return setLoading(false);
       try {
-        const res = await axios.get('http://localhost:5000/api/orders', {
+        const res = await axios.get('https://casex-backend-h0xv.onrender.com/api/orders', {
           headers: { Authorization: `Bearer ${currentUser.token}` }
         });
         
@@ -614,7 +614,7 @@ export default function Dashboard() {
 
           const netWalletIncome = vendorOrders.reduce((acc, curr) => acc + (Number(curr.vendorPayout) || (Number(curr.totalAmount) * 0.90 || 0)), 0);
 
-          const payoutRes = await axios.get('http://localhost:5000/api/payouts/my-requests', {
+          const payoutRes = await axios.get('https://casex-backend-h0xv.onrender.com/api/payouts/my-requests', {
             headers: { Authorization: `Bearer ${currentUser.token}` }
           });
           setPayoutHistory(payoutRes.data);
@@ -659,7 +659,7 @@ export default function Dashboard() {
 
   const handleUpdateStatus = async (orderId, newStatus) => {
     try {
-      await axios.put(`http://localhost:5000/api/orders/${orderId}/status`, 
+      await axios.put(`https://casex-backend-h0xv.onrender.com/api/orders/${orderId}/status`, 
         { status: newStatus },
         { headers: { Authorization: `Bearer ${currentUser.token}` } }
       );

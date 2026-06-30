@@ -122,7 +122,7 @@ export default function Wishlist() {
     const fetchWishlist = async () => {
       if (!userInfo) return setLoading(false);
       try {
-        const res = await axios.get('http://localhost:5000/api/auth/wishlist', {
+        const res = await axios.get('https://casex-backend-h0xv.onrender.com/api/auth/wishlist', {
           headers: { Authorization: `Bearer ${userInfo.token}` }
         });
         setWishlist(res.data);
@@ -137,7 +137,7 @@ export default function Wishlist() {
 
   const handleRemove = async (productId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/auth/wishlist/${productId}`, {
+      await axios.delete(`https://casex-backend-h0xv.onrender.com/api/auth/wishlist/${productId}`, {
         headers: { Authorization: `Bearer ${userInfo.token}` }
       });
       setWishlist(wishlist.filter(item => item._id !== productId));
