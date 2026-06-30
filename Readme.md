@@ -6,7 +6,7 @@ CaseX is a full-stack e-commerce web application built using the MERN stack. It 
 ---
 
 ## 🚀 Live Demo
-* **Click Here:** [Paste your live Vercel/Render link here]
+* **Click Here:** https://casex-six.vercel.app/
 
 ---
 
@@ -34,46 +34,3 @@ CaseX is a full-stack e-commerce web application built using the MERN stack. It 
 * **Backend:** Node.js, Express.js
 * **Database:** MongoDB Atlas
 * **Payment Gateway:** Razorpay API
-
----
-
-## 📦 Installation & Setup
-
-Follow these steps to run the project locally:
-
-### 1. Clone the repository
-```bash
-git clone https://github.com/your-username/casex.git
-cd casex
-```
-
-### 2. Setup Backend Environment Variables
-
-Create a .env file in your server/backend root folder and add the following:
-
-Code snippet
-```bash
-PORT=5000
-MONGO_URI=your_mongodb_atlas_connection_string
-JWT_SECRET=your_jwt_secret_key
-RAZORPAY_KEY_ID=your_razorpay_test_key
-RAZORPAY_KEY_SECRET=your_razorpay_test_secret
-```
-
-### 3. Install Dependencies & Run Backend
-
-```bash
-# Navigate to backend folder
-cd backend
-npm install
-npm start
-```
-
-### 4. Install Dependencies & Run Frontend
-
-```bash
-# Navigate to frontend folder
-cd ../frontend
-npm install
-npm run dev
-```
